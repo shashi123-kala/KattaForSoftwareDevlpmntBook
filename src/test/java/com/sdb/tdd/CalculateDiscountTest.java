@@ -120,5 +120,30 @@ public class CalculateDiscountTest {
 		assertEquals(380.0, calculateDiscount.getTotalPrice());
 
 	}
+	
+	@Test
+	public void buyingThreeCpyOfTwoDifftBookWithTwoCopsOfoneBook() {
+
+		SoftwareDevelopmentBook sdbFirstI = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIBook();
+		SoftwareDevelopmentBook sdbFirstII = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIBook();
+		SoftwareDevelopmentBook sdbFirstIII = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIBook();
+
+		SoftwareDevelopmentBook sdbSecI = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIIBook();
+		SoftwareDevelopmentBook sdbSecII = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIIBook();
+		SoftwareDevelopmentBook sdbSecIII = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIIBook();
+
+		SoftwareDevelopmentBook sdbThirdI = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIIIBook();
+		SoftwareDevelopmentBook sdbThirdII = SoftwareDevlopmentBookList.GivenASoftwareDevelopmentIIIBook();
+
+		calculateDiscount.Add(sdbFirstI);
+		calculateDiscount.Add(sdbFirstII);
+		calculateDiscount.Add(sdbFirstIII);
+		calculateDiscount.Add(sdbSecI);
+		calculateDiscount.Add(sdbSecII);
+		calculateDiscount.Add(sdbSecIII);
+		calculateDiscount.Add(sdbThirdI);
+		calculateDiscount.Add(sdbThirdII);
+		assertEquals(365.00, calculateDiscount.getTotalPrice());
+	}
 
 }
