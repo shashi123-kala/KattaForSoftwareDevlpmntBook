@@ -47,7 +47,6 @@ public class CalculateDiscount {
 				amtAfterDis += setPrice;
 				setPrice = 0;
 			}
-
 		}
 		return amtAfterDis;
 
@@ -60,10 +59,9 @@ public class CalculateDiscount {
 			differentBooksSetsCombinations.add(calculateDifferentBooksSetsByMaxSize(bookSetQty, i));
 		}
 		List<SoftwareDevelopmentBookSet> optimizeSetList;
-		if (differentBooksSetsCombinations.size() > 1)
-			optimizeSetList = selectBooksSetsWithMaxDiscount(differentBooksSetsCombinations);
-		else
-			optimizeSetList = differentBooksSetsCombinations.get(0);
+		optimizeSetList = (differentBooksSetsCombinations.size() > 1)
+				? selectBooksSetsWithMaxDiscount(differentBooksSetsCombinations)
+				: differentBooksSetsCombinations.get(0);
 		return optimizeSetList;
 
 	}
