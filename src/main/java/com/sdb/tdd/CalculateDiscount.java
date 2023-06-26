@@ -8,6 +8,9 @@ public class CalculateDiscount {
 		} else if (noOfBooks == 2) {
 			double count = 2 * 50.00;
 			amtAfterDis = count - (count * (dis / 100));
+		} else if (noOfBooks == 3) {
+			double count = 3 * 50.00;
+			amtAfterDis = count - (count * (dis / 100));
 		}
 		return amtAfterDis;
 	}
